@@ -22,7 +22,7 @@ struct NewsletterError: Error {
 }
 
 /// Service newsletter — proxy serveur `180c/v1/newsletter/subscribe`
-/// (contrat apps INIT-87).
+/// (contrat apps).
 ///
 /// La clé d'e-mailing ne quitte jamais le serveur : l'app envoie
 /// `{ email, action }` + Bearer JWT. Le serveur vérifie que l'e-mail correspond
@@ -110,7 +110,7 @@ private struct ServerError: Decodable {
     let code: String
 }
 
-/// Réponse proxy newsletter (contrat apps INIT-87).
+/// Réponse proxy newsletter (contrat apps).
 struct NewsletterResponse: Decodable {
     let listID: String
     let action: String

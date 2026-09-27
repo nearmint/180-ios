@@ -1,8 +1,8 @@
-# Fiche App Store Connect — métadonnées (INIT-47)
+# Fiche App Store Connect — métadonnées
 
 Métadonnées de production de l'app **180°C**, structurées pour
 [`fastlane deliver`](https://docs.fastlane.tools/actions/deliver/).
-Source : spécification INIT-47 (section 3 « Fiche App Store Connect »).
+Source : cahier des charges (section 3 « Fiche App Store Connect »).
 
 > L'upload nécessite un compte Apple Developer actif et un enregistrement
 > App Store Connect (App Store ID).

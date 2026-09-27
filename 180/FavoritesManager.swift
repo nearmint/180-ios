@@ -119,7 +119,7 @@ final class FavoritesManager: ObservableObject {
     ///
     /// Sans cette purge, les IDs du compte A survivaient à la session : sur un
     /// appareil partagé, le login suivant les poussait dans le carnet du compte
-    /// B via `syncOnLogin()` (union last-write-wins). Parité LOT-07 Android.
+    /// B via `syncOnLogin()` (union last-write-wins). Parité Android.
     func clearLocal() {
         favoriteIDs = []
         UserDefaults.standard.removeObject(forKey: key)

@@ -1,4 +1,4 @@
-# Screenshots App Store — fr-FR (INIT-47)
+# Screenshots App Store — fr-FR
 
 Déposer ici les captures finales (`.png`) attendues par `fastlane deliver`.
 Les `.png` sont ignorés par git (`.gitignore`) ; seul ce README est versionné.
@@ -13,7 +13,7 @@ Les `.png` sont ignorés par git (`.gitignore`) ; seul ce README est versionné.
 
 **5 à 10 captures par taille.**
 
-## Écrans à présenter (cf. spec INIT-47 §4)
+## Écrans à présenter (cf. cahier des charges §4)
 
 1. Home éditorialisé
 2. Détail recette (+ paywall / abonnement)

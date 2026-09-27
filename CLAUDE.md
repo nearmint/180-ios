@@ -18,7 +18,7 @@ Consultation de recettes pour abonnés.
 - Bundle id : `fr.thermostat6.app180`.
 
 ## Versionnage iOS
-- `CURRENT_PROJECT_VERSION` et `MARKETING_VERSION` sont définis au niveau **PROJET** (commit `06a241d`). Les cibles app et extension en **héritent** ; `180Tests` conserve sa surcharge locale.
+- `CURRENT_PROJECT_VERSION` et `MARKETING_VERSION` sont définis au niveau **PROJET**. Les cibles app et extension en **héritent** ; `180Tests` conserve sa surcharge locale.
 - **Pour bumper** : sélectionner le PROJET dans le navigateur Xcode → onglet **Build Settings**. Ne **jamais** passer par l'onglet **General** d'une cible — il écrit au niveau cible et recrée la divergence app/extension qui fait **rejeter l'archive** par App Store Connect.
 - `IPHONEOS_DEPLOYMENT_TARGET` est défini au niveau **PROJET**, à **17.0** ; les trois cibles en héritent. Minimum établi empiriquement : **16.4 casse** sur `ContentUnavailableView` et `onChange(of:initial:_:)`. La valeur d'origine (26.2) était un **effet de bord** de la création du projet dans Xcode, pas une décision.
 
