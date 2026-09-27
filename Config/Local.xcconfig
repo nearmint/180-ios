@@ -1,0 +1,24 @@
+// Environnement LOCAL — Local by Flywheel (180c.local)
+//
+// Échappement xcconfig obligatoire : « // » démarre un commentaire, donc on
+// casse la séquence avec une expansion vide `$()` pour écrire « https:// ».
+
+API_BASE_URL = https:/$()/180c.local
+WEB_BASE_URL = https:/$()/180c.local
+IS_LOCAL = YES
+
+// OneSignal — App ID unique. Une seule app OneSignal couvre debug / TestFlight /
+// App Store ; la distinction environnement se fait via le tag `env` posé au
+// runtime. Exposé à l'app par la clé Info.plist `OneSignalAppId`. Pas un secret.
+ONESIGNAL_APP_ID = f06a0870-a09a-4d27-af30-a26aea31ded9
+
+// Injection dans l'Info.plist (Debug) — cf. Config/Info-Local.plist.
+INFOPLIST_FILE = Config/Info-Local.plist
+
+// Adresses ouvertes par l'écran Compte (mailto « rédaction » / « support »).
+// Valeurs publiques par défaut ; surcharge éventuelle dans Config/Private.xcconfig,
+// non versionné (écrit par ci_scripts/ci_post_clone.sh en CI).
+CONTACT_EDITORIAL_EMAIL = redaction@180c.fr
+CONTACT_SUPPORT_EMAIL = contact@180c.fr
+
+#include? "Private.xcconfig"

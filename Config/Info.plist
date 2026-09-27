@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Info.plist complet (Release / prod). GENERATE_INFOPLIST_FILE=NO :
+	     le build injecte les clés de packaging (DT*, plateforme, icônes,
+	     UIDeviceFamily…) par-dessus. Aucune exception ATS : prod HTTPS valide. -->
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<!-- Nom affiché sous l'icône. Sans cette clé, iOS retombe sur CFBundleName
+	     (= PRODUCT_NAME = « 180 ») ; on veut « 180°C », comme sur Android. -->
+	<key>CFBundleDisplayName</key>
+	<string>180°C</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
+	<!-- Portrait forcé : aucune orientation paysage, iPhone comme iPad.
+	     UIRequiresFullScreen=YES est obligatoire côté iPad, sinon la validation
+	     App Store exige les 4 orientations pour le multitâche. -->
+	<key>UISupportedInterfaceOrientations~iphone</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<!-- Environnement (injecté depuis Config/Release.xcconfig). -->
+	<key>API_BASE_URL</key>
+	<string>$(API_BASE_URL)</string>
+	<key>WEB_BASE_URL</key>
+	<string>$(WEB_BASE_URL)</string>
+	<!-- OneSignal — App ID injecté depuis Config/Release.xcconfig. -->
+	<key>OneSignalAppId</key>
+	<string>$(ONESIGNAL_APP_ID)</string>
+	<!-- Adresses de contact de l'écran Compte — injectées depuis les xcconfig. -->
+	<key>ContactEditorialEmail</key>
+	<string>$(CONTACT_EDITORIAL_EMAIL)</string>
+	<key>ContactSupportEmail</key>
+	<string>$(CONTACT_SUPPORT_EMAIL)</string>
+	<!-- Push : réception des notifications en arrière-plan (rich push + delivery confirmée). -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<!-- Export compliance : chiffrement standard système uniquement (HTTPS/TLS,
+	     Keychain, JWT, SDK Firebase/OneSignal) → exemption valide. Supprime le
+	     « Missing Compliance » demandé à chaque build TestFlight. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+</dict>
+</plist>

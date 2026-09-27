@@ -1,0 +1,8 @@
+# Appfile — identifiants App Store Connect
+#
+# Utilisé par `fastlane deliver` pour pousser la fiche store (metadata/).
+# L'Apple ID du compte développeur n'est pas versionné : le fournir via
+# la variable d'environnement FASTLANE_USER au moment de l'appel.
+
+app_identifier("fr.thermostat6.app180") # Bundle ID de production
+team_id("8NGB6MZ9RH")                    # Apple Developer Team ID (embarqué dans la signature)

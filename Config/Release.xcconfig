@@ -1,0 +1,28 @@
+// Environnement RELEASE — production (www.180c.fr)
+//
+// Domaine canonique = www. `180c.fr` (apex) redirige en 301 vers `www.180c.fr` ;
+// URLSession suit ce 301 et dégrade un POST en GET (corps perdu → login cassé).
+// On pointe donc directement sur le canonique.
+//
+// Échappement xcconfig : « https:// » s'écrit « https:/$()/ » (cf. Local.xcconfig).
+// Aucune exception ATS ici : la prod est en HTTPS valide.
+
+API_BASE_URL = https:/$()/www.180c.fr
+WEB_BASE_URL = https:/$()/www.180c.fr
+IS_LOCAL = NO
+
+// OneSignal — App ID unique (identique au Debug). Une seule app OneSignal couvre
+// TestFlight et App Store, distingués par le tag `env` posé au runtime. Exposé à
+// l'app par la clé Info.plist `OneSignalAppId`. L'App ID n'est pas un secret.
+ONESIGNAL_APP_ID = f06a0870-a09a-4d27-af30-a26aea31ded9
+
+// Injection dans l'Info.plist (Release) — cf. Config/Info.plist.
+INFOPLIST_FILE = Config/Info.plist
+
+// Adresses ouvertes par l'écran Compte (mailto « rédaction » / « support »).
+// Valeurs publiques par défaut ; surcharge éventuelle dans Config/Private.xcconfig,
+// non versionné (écrit par ci_scripts/ci_post_clone.sh en CI).
+CONTACT_EDITORIAL_EMAIL = redaction@180c.fr
+CONTACT_SUPPORT_EMAIL = contact@180c.fr
+
+#include? "Private.xcconfig"

@@ -1,0 +1,69 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+xcuserdata/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+*.moved-aside
+
+# Swift Package Manager
+.build/
+.swiftpm/
+# Ignoré par défaut (packages locaux), sauf celui du projet : Xcode Cloud exige
+# un resolved commité, la résolution automatique étant désactivée côté CI.
+Package.resolved
+!180.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Provisioning profiles
+*.mobileprovision
+*.p8
+*.p12
+*.cer
+
+# Secrets et configuration privée
+# GoogleService-Info.plist n'est pas versionné : Xcode Cloud le reconstitue via
+# ci_scripts/ci_post_clone.sh (variable secrète GOOGLE_SERVICE_INFO_PLIST_BASE64).
+180/GoogleService-Info.plist
+Config/Private.xcconfig
+.env*
+*.jks
+*.keystore
+google-services.json
+android-secrets/
+
+# Claude Code — contexte privé et réglages locaux
+CLAUDE.local.md
+.claude/settings.local.json
+
+# IDE
+.idea/
+*.iml
+
+# Logs / temp
+*.log
+*.tmp

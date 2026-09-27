@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!--
+	GABARIT — NE PAS UTILISER TEL QUEL.
+
+	Le vrai `GoogleService-Info.plist` est un secret (gitignoré). Pour configurer
+	un poste de dev :
+	  1. Récupérer le fichier réel depuis la console Firebase
+	     (Project settings → iOS app `fr.thermostat6.app180` → GoogleService-Info.plist).
+	  2. Le déposer dans le dossier `180/` (renommé en `GoogleService-Info.plist`).
+	  3. Xcode (synchronized folder group) l'embarque automatiquement.
+
+	Sans ce fichier, l'app démarre quand même : Firebase Analytics est simplement
+	désactivé (cf. `_80App.configureFirebase()`).
+-->
+<dict>
+	<key>API_KEY</key>
+	<string>YOUR_API_KEY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>000000000000</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>fr.thermostat6.app180</string>
+	<key>PROJECT_ID</key>
+	<string>your-firebase-project-id</string>
+	<key>STORAGE_BUCKET</key>
+	<string>your-firebase-project-id.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:000000000000:ios:0000000000000000000000</string>
+</dict>
+</plist>
