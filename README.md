@@ -62,9 +62,9 @@ The account screen's contact addresses default to the public ones in the xcconfi
 Xcode Cloud runs two workflows:
 
 - **CI**: builds every `feat/*`, `fix/*` and `chore/*` branch.
-- **Release**: archives every push to `main` and uploads it to TestFlight.
+- **Release**: archives every push to `main` with *App Store Connect* distribution: the build lands in TestFlight and can be selected for an App Store submission. Creating the version and submitting it for review stay manual in App Store Connect.
 
-Xcode Cloud runs `ci_scripts/ci_post_clone.sh` after cloning: it rebuilds `180/GoogleService-Info.plist` from the secret environment variable `GOOGLE_SERVICE_INFO_PLIST_BASE64` (and, if set, writes `Config/Private.xcconfig` from `CONTACT_EDITORIAL_EMAIL` / `CONTACT_SUPPORT_EMAIL`). Both workflows must declare that variable.
+Xcode Cloud runs `ci_scripts/ci_post_clone.sh` after cloning: it rebuilds `180/GoogleService-Info.plist` from the secret environment variable `GOOGLE_SERVICE_INFO_PLIST_BASE64` (and, if set, writes `Config/Private.xcconfig` from `CONTACT_EDITORIAL_EMAIL` / `CONTACT_SUPPORT_EMAIL`). It is declared once, as a shared environment variable of the Xcode Cloud product, applied to both workflows.
 
 App Store submission stays manual in App Store Connect.
 
