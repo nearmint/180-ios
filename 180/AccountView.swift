@@ -87,25 +87,8 @@ struct AccountView: View {
                                         .foregroundColor(.primary)
                                 }
                             }
-                        } else {
-                            WebLink(url: URL(string: APIConfig.shared.webLink("/abonnement/"))!, onOpen: { AnalyticsService.signupClick(source: "account") }) {
-                                HStack {
-                                    Image(systemName: "star")
-                                        .foregroundColor(.accent180)
-                                    Text("S'abonner")
-                                        .foregroundColor(.primary)
-                                }
-                            }
                         }
-
-                        WebLink(url: URL(string: APIConfig.shared.webLink("/boutique/"))!, onOpen: { AnalyticsService.boutiqueClick() }) {
-                            HStack {
-                                Image(systemName: "bag")
-                                    .foregroundColor(.accent180)
-                                Text("Boutique 180°C")
-                                    .foregroundColor(.primary)
-                            }
-                        }
+                        // Guideline 3.1.1 : aucun lien d'achat (abonnement, boutique) dans l'app iOS.
                     }
 
                     // MARK: 2 - Notifications et newsletters
@@ -300,6 +283,14 @@ struct AccountView: View {
                             }
                             Button("Annuler", role: .cancel) {}
                         }
+
+                        // Guideline 5.1.1(v) : suppression du compte depuis l'app.
+                        // Ouvre l'écran web dédié en session connectée (vérification
+                        // du mot de passe, e-mail de confirmation, effacement).
+                        WebLink(url: URL(string: APIConfig.shared.autoLoginLink("/mon-compte/supprimer-mon-compte/", token: auth.getToken()))!) {
+                            Label("Supprimer mon compte", systemImage: "trash")
+                                .foregroundColor(.red)
+                        }
                     }
 
                     // MARK: 6 - Informations légales
@@ -374,23 +365,6 @@ struct AccountView: View {
                             }
                         }
 
-                        WebLink(url: URL(string: APIConfig.shared.webLink("/abonnement/"))!, onOpen: { AnalyticsService.signupClick(source: "account") }) {
-                            HStack {
-                                Image(systemName: "star")
-                                    .foregroundColor(.accent180)
-                                Text("S'abonner")
-                                    .foregroundColor(.primary)
-                            }
-                        }
-
-                        WebLink(url: URL(string: APIConfig.shared.webLink("/boutique/"))!, onOpen: { AnalyticsService.boutiqueClick() }) {
-                            HStack {
-                                Image(systemName: "bag")
-                                    .foregroundColor(.accent180)
-                                Text("Boutique 180°C")
-                                    .foregroundColor(.primary)
-                            }
-                        }
                     }
 
                     // MARK: 2 - Centre d'aide
